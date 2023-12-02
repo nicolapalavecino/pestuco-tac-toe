@@ -11,15 +11,7 @@ while True:
     print ('Wins = ' + str(wins) + ' Losses = ' + str(losses) + ' Ties = ' + str(ties))
 
     #Eleccion del jugador
-    while True:
-        print ('Elegis vos primero: piedra (pi), papel (pa) o tijera (t)? Para salir elige (q)')
-        jugador = input()
-        if jugador == 'pi' or jugador == 'pa' or jugador == 't':
-            break
-        if jugador == 'q':
-            sys.exit()
-        else:
-            print ('Escribiste cualquier cosa')
+    jugador = playerSelection()
 
     #Display de eleccion del jugador
     if jugador == 'pi':
@@ -64,6 +56,17 @@ while True:
         loose()
     elif jugador == 't' and maquina == 'pi':
         loose()
+
+def playerSelection():
+    while True:
+        print ('Elegis vos primero: piedra (pi), papel (pa) o tijera (t)? Para salir elige (q)')
+        selection = input()
+        if selection == 'pi' or selection == 'pa' or selection == 't':
+            return selection
+        if selection == 'q':
+            sys.exit()
+        else:
+            print ('Escribiste cualquier cosa')
 
 def loose():
     print ('Perdiste')

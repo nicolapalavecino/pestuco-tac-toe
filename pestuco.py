@@ -74,3 +74,7 @@ while True:
 def loose():
     print ('Perdiste')
     losses = losses + 1
+
+def win():
+    print ('Ganaste')
+    wins = wins + 1

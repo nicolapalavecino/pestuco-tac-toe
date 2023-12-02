@@ -28,24 +28,17 @@ matchOutcomes = {
 while True:
     print ('Wins = ' + str(wins) + ' Losses = ' + str(losses) + ' Ties = ' + str(ties))
 
-    #Eleccion del jugador
     jugador = playerSelection()
-
-    #Display de eleccion del jugador
     print ("Elegiste {}, yo elijo ...".format(selectionText[jugador]))
 
-    #Eleccion y display de maquina aleatoria
     eleccion_maquina = machineSelection()
     print("{}".format(selectionText[eleccion_maquina]).capitalize())
 
     outcome = matchOutcomes[jugador + '/' + eleccion_maquina]
-    #Batalla empates
     if outcome == 'tie':
         tie()
-    #Batalla victorias
     elif outcome == 'win':
         win()
-    #Batalla derrotas
     elif outcome == 'loose':
         loose()
 

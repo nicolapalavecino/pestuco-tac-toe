@@ -73,3 +73,7 @@ while True:
     elif jugador == 't' and maquina == 'pi':
         print ('Perdiste')
         losses = losses + 1
+
+def loose():
+    print ('Perdiste')
+    losses = losses + 1

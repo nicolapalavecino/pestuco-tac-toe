@@ -75,3 +75,7 @@ def loose():
 def win():
     print ('Ganaste')
     wins = wins + 1
+
+def tie():
+    print ('Es un empate')
+    ties = ties + 1

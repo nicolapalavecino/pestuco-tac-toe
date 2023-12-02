@@ -54,14 +54,11 @@ while True:
 
     #Batalla victorias
     if jugador == 'pi' and maquina == 't':
-        print ('Ganaste')
-        wins = wins + 1
+        win()
     elif jugador == 'pa' and maquina == 'pi':
-        print ('Ganaste')
-        wins = wins + 1
+        win()
     elif jugador == 't' and maquina == 'pa':
-        print ('Ganaste')
-        wins = wins + 1
+        win()
 
     #Batalla derrotas
     if jugador == 'pi' and maquina == 'pa':

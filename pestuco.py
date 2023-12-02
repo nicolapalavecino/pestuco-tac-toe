@@ -65,14 +65,11 @@ while True:
 
     #Batalla derrotas
     if jugador == 'pi' and maquina == 'pa':
-        print ('Perdiste')
-        losses = losses + 1
+        loose()
     elif jugador == 'pa' and maquina == 't':
-        print ('Perdiste')
-        losses = losses + 1
+        loose()
     elif jugador == 't' and maquina == 'pi':
-        print ('Perdiste')
-        losses = losses + 1
+        loose()
 
 def loose():
     print ('Perdiste')

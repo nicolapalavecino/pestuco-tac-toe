@@ -26,6 +26,7 @@ matchOutcomes = {
 }
 
 def main():
+    global wins, losses, ties
     print ('Wins = ' + str(wins) + ' Losses = ' + str(losses) + ' Ties = ' + str(ties))
 
     jugador = playerSelection()
@@ -36,11 +37,11 @@ def main():
 
     outcome = matchOutcomes[jugador + '/' + eleccion_maquina]
     if outcome == 'tie':
-        tie()
+        ties = tie(ties)
     elif outcome == 'win':
-        win()
+        wins = win(wins)
     elif outcome == 'loose':
-        loose()
+        losses = loose(losses)
 
 def playerSelection():
     while True:
@@ -57,17 +58,17 @@ def machineSelection():
     options = ['pi', 'pa', 't']
     return options[random.randint(0,2)]
 
-def loose():
+def loose(losses):
     print ('Perdiste')
-    losses = losses + 1
+    return losses + 1
 
-def win():
+def win(wins):
     print ('Ganaste')
-    wins = wins + 1
+    return wins + 1
 
-def tie():
+def tie(ties):
     print ('Es un empate')
-    ties = ties + 1
+    return ties + 1
 
 while True:
     main()

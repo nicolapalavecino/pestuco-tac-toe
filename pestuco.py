@@ -20,12 +20,7 @@ while True:
     jugador = playerSelection()
 
     #Display de eleccion del jugador
-    if jugador == 'pi':
-        print ('Elegiste piedra, yo elijo ...')
-    elif jugador == 'pa':
-        print ('Elegiste papel, yo elijo ...')
-    elif jugador == 't':
-        print ('Elegiste tijera, yo elijo ...')
+    print ("Elegiste {}, yo elijo ...".format(selectionText[jugador]))
 
     #Eleccion y display de maquina aleatoria
     eleccion_maquina = machineSelection()

@@ -13,6 +13,18 @@ selectionText = {
     't': 'tijera'
 }
 
+matchOutcomes = {
+    'pi/pi': 'tie',
+    'pa/pa': 'tie',
+    't/t': 'tie',
+    'pi/t': 'win',
+    'pa/pi': 'win',
+    't/pa': 'win',
+    'pi/pa': 'loose',
+    'pa/t': 'loose',
+    't/pi': 'loose',
+}
+
 while True:
     print ('Wins = ' + str(wins) + ' Losses = ' + str(losses) + ' Ties = ' + str(ties))
 
@@ -26,28 +38,15 @@ while True:
     eleccion_maquina = machineSelection()
     print("{}".format(selectionText[eleccion_maquina]).capitalize())
 
+    outcome = matchOutcomes[jugador + '/' + eleccion_maquina]
     #Batalla empates
-    if jugador == 'pi' and maquina == 'pi':
+    if outcome == 'tie':
         tie()
-    elif jugador == 'pa' and maquina == 'pa':
-        tie()
-    elif jugador == 't' and maquina == 't':
-        tie()
-
     #Batalla victorias
-    if jugador == 'pi' and maquina == 't':
+    elif outcome == 'win':
         win()
-    elif jugador == 'pa' and maquina == 'pi':
-        win()
-    elif jugador == 't' and maquina == 'pa':
-        win()
-
     #Batalla derrotas
-    if jugador == 'pi' and maquina == 'pa':
-        loose()
-    elif jugador == 'pa' and maquina == 't':
-        loose()
-    elif jugador == 't' and maquina == 'pi':
+    elif outcome == 'loose':
         loose()
 
 def playerSelection():

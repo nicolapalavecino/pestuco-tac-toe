@@ -7,6 +7,12 @@ wins = 0
 losses = 0
 ties = 0
 
+selectionText = {
+    'pi': 'piedra',
+    'pa': 'papel',
+    't': 'tijera'
+}
+
 while True:
     print ('Wins = ' + str(wins) + ' Losses = ' + str(losses) + ' Ties = ' + str(ties))
 
@@ -22,16 +28,8 @@ while True:
         print ('Elegiste tijera, yo elijo ...')
 
     #Eleccion y display de maquina aleatoria
-    eleccion_maquina = random.randint (1, 3)
-    if eleccion_maquina == 1:
-        maquina = 'pi'
-        print ('Piedra')
-    elif eleccion_maquina == 2:
-        maquina = 'pa'
-        print ('Papel')
-    elif eleccion_maquina == 3:
-        maquina = 't'
-        print ('Tijera')
+    eleccion_maquina = machineSelection()
+    print("{}".format(selectionText[eleccion_maquina]).capitalize())
 
     #Batalla empates
     if jugador == 'pi' and maquina == 'pi':
@@ -67,6 +65,10 @@ def playerSelection():
             sys.exit()
         else:
             print ('Escribiste cualquier cosa')
+
+def machineSelection():
+    options = ['pi', 'pa', 't']
+    return options[random.randint(0,2)]
 
 def loose():
     print ('Perdiste')

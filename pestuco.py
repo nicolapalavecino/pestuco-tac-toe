@@ -25,7 +25,7 @@ matchOutcomes = {
     't/pi': 'loose',
 }
 
-while True:
+def main():
     print ('Wins = ' + str(wins) + ' Losses = ' + str(losses) + ' Ties = ' + str(ties))
 
     jugador = playerSelection()
@@ -68,3 +68,6 @@ def win():
 def tie():
     print ('Es un empate')
     ties = ties + 1
+
+while True:
+    main()

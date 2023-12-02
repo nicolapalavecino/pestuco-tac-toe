@@ -43,14 +43,11 @@ while True:
 
     #Batalla empates
     if jugador == 'pi' and maquina == 'pi':
-        print ('Es un empate')
-        ties = ties + 1
+        tie()
     elif jugador == 'pa' and maquina == 'pa':
-        print ('Es un empate')
-        ties = ties + 1
+        tie()
     elif jugador == 't' and maquina == 't':
-        print ('Es un empate')
-        ties = ties + 1
+        tie()
 
     #Batalla victorias
     if jugador == 'pi' and maquina == 't':
